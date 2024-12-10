@@ -6,8 +6,8 @@ import os
 import re
 
 # Telegram Configuration
-TELEGRAM_API_TOKEN = "8063092671:AAH5P0ayYNiSLJE1l0RjptlzpBiKzNqZt_w"
-TELEGRAM_CHANNEL_ID = "-1002369942413"
+TELEGRAM_API_TOKEN = "YOUR_TOKEN"
+TELEGRAM_CHANNEL_ID = "YOUR_CHANNEL_ID"
 
 # Function to generate the log file name
 def generate_log_filename():
