@@ -120,6 +120,83 @@ pip install pynput requests
 
 ---
 
+#### Running the Keylogger Script from Excel Macro
+
+You can execute the Python-based keylogger script directly from an Excel macro using VBA. This integration allows seamless execution from within an Excel file, leveraging the following steps and the provided VBA code.
+
+---
+
+### Steps to Configure and Run
+
+1. **Enable Developer Tab in Excel:**
+   - Open Excel, go to `File` > `Options` > `Customize Ribbon`.
+   - Check the box for `Developer` in the right pane and click `OK`.
+
+2. **Open VBA Editor:**
+   - Navigate to the `Developer` tab and click `Visual Basic`.
+   - Alternatively, press `Alt + F11` to open the VBA editor.
+
+3. **Insert the VBA Code:**
+   - In the VBA editor, click `Insert` > `Module`.
+   - Copy and paste the following VBA code into the module:
+
+     ```vba
+     Sub EseguiPythonScript()
+         Dim objShell As Object
+         Dim PythonExePath, PythonScriptPath As String
+
+         Set objShell = VBA.CreateObject("Wscript.Shell")
+
+         ' Path to the Python executable
+         PythonExePath = """C:\Users\MauroGrugni\AppData\Local\Programs\Python\Python313\python.exe"""
+
+         ' Path to the Python script
+         PythonScriptPath = "C:\Users\MauroGrugni\Music\keylogger\keylogger.py"
+
+         objShell.Run PythonExePath & " " & PythonScriptPath
+     End Sub
+     ```
+
+4. **Update the Paths:**
+   - Replace `PythonExePath` with the full path to your Python executable.
+   - Replace `PythonScriptPath` with the full path to your Python script.
+
+5. **Run the Macro:**
+   - Save the workbook as a macro-enabled file (`.xlsm`).
+   - Go to the `Developer` tab and click `Macros`.
+   - Select `EseguiPythonScript` and click `Run`.
+
+---
+
+### How It Works
+
+- The macro uses the `Wscript.Shell` object to run external commands.
+- The `PythonExePath` specifies the Python interpreter location.
+- The `PythonScriptPath` points to the keylogger script.
+- When executed, the macro launches the Python script in a new process, enabling keylogging functionality.
+
+---
+
+### Troubleshooting
+
+1. **Macro Security Settings:**
+   - Ensure macros are enabled in Excel by adjusting the settings in `File` > `Options` > `Trust Center` > `Trust Center Settings` > `Macro Settings`.
+
+2. **File Path Errors:**
+   - Verify the accuracy of both `PythonExePath` and `PythonScriptPath`.
+   - Ensure there are no missing quotes or syntax errors.
+
+3. **Python Script Execution:**
+   - Test the script independently in the command prompt to confirm it runs without issues.
+
+4. **Permission Issues:**
+   - Run Excel with administrator privileges if required to execute external scripts.
+
+---
+
+This method adds flexibility by allowing users to execute Python scripts directly from Excel, enhancing integration with existing workflows.
+
+
 ### Contributions
 
 Contributions are welcome. Fork this repository and submit a pull request with your enhancements.
