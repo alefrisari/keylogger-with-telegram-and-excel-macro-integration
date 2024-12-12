@@ -182,4 +182,6 @@ This method adds flexibility by allowing users to execute Python scripts directl
 
 ### Contributions
 
+Thanks to [@maurone4](https://github.com/maurone4) for their support!
+
 Contributions are welcome. Fork this repository and submit a pull request with your enhancements.
