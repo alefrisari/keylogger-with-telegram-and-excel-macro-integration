@@ -138,24 +138,7 @@ You can execute the Python-based keylogger script directly from an Excel macro u
 
 3. **Insert the VBA Code:**
    - In the VBA editor, click `Insert` > `Module`.
-   - Copy and paste the following VBA code into the module:
-
-     ```vba
-     Sub EseguiPythonScript()
-         Dim objShell As Object
-         Dim PythonExePath, PythonScriptPath As String
-
-         Set objShell = VBA.CreateObject("Wscript.Shell")
-
-         ' Path to the Python executable
-         PythonExePath = """your path"""
-
-         ' Path to the Python script
-         PythonScriptPath = "your path"
-
-         objShell.Run PythonExePath & " " & PythonScriptPath
-     End Sub
-     ```
+   - Refer to the complete VBA code provided in the corresponding file for details on how to set up the macro.
 
 4. **Update the Paths:**
    - Replace `PythonExePath` with the full path to your Python executable.
